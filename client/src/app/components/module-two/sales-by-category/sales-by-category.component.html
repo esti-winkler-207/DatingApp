@@ -1,0 +1,19 @@
+<div class="container">
+    <form class="k-form" [formGroup]="form">
+        <kendo-formfield>
+            <kendo-label  text="category name"></kendo-label>
+            <kendo-textbox formControlName="categoryName" [clearButton]="true" [(ngModel)]="categoryName" required></kendo-textbox>
+        </kendo-formfield>
+        <kendo-formfield>
+            <kendo-label  text="order year"></kendo-label>
+            <kendo-textbox formControlName="ordYear" [clearButton]="true" [(ngModel)]="ordYear" required></kendo-textbox>
+        </kendo-formfield>
+
+        <div class="k-form-buttons">
+            <button class="k-button k-primary" (click)="getSalesByCategory()">search now</button>
+        </div>
+    </form>
+</div>
+<div class="block" *ngIf="result.length != 0">
+    <app-cust-order-history-grid [result]="result" [isNotSales]="false"></app-cust-order-history-grid>
+</div>

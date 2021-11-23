@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+.container {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-top: 4rem;
+}
+
+.k-form {
+  width: 400px;
+}
+
+* {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+/*# sourceMappingURL=styles.css.map */

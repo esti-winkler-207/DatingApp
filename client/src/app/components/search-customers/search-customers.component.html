@@ -1,0 +1,106 @@
+
+
+<div class="example">
+    <form class="k-form" [formGroup]="form">
+        <h5>Search for a specific customer</h5>
+        <kendo-formfield>
+            <kendo-label [for]="ContactName" text="Contact Name"></kendo-label>
+            <kendo-textbox formControlName="ContactName" [clearButton]="true" placeholder=" " [(ngModel)]="this.customer.contactName" #ContactName required></kendo-textbox>
+
+            <kendo-formerror>Error: contact name is required</kendo-formerror>
+        </kendo-formfield>
+
+        <kendo-formfield>
+            <kendo-label [for]="Address" text="Address"></kendo-label>
+            <kendo-textbox formControlName="Address" [clearButton]="true" placeholder=" " [(ngModel)]="this.customer.address" #Address required></kendo-textbox>
+            <kendo-formerror>Error: address is required</kendo-formerror>
+            <!-- <kendo-formerror *ngIf="form.controls.email.errors?.required">Error: Email is required</kendo-formerror>
+            <kendo-formerror *ngIf="form.controls.email.errors?.email">Error: Not valid email format</kendo-formerror> -->
+        </kendo-formfield>
+      <kendo-formfield>
+
+      <kendo-label [for]="City" text="Select City"></kendo-label>
+      <kendo-dropdownlist
+        #City
+        formControlName="City"
+        [data]="cities"
+        [defaultItem]="{ text: 'Select city', value: null }"
+        textField="text"
+        valueField="text"
+        [valuePrimitive]="true"
+        [(ngModel)]="this.customer.city"
+        required
+      >
+      </kendo-dropdownlist>
+    </kendo-formfield>
+
+      <kendo-formfield>
+        <kendo-label [for]="Phone" text="Phone"></kendo-label>
+        <kendo-textbox formControlName="Phone" [clearButton]="true" [(ngModel)]="this.customer.phone" #Phone required ></kendo-textbox>
+
+        <kendo-formerror *ngIf="form.controls.Phone.errors?.required">Error: phone is required</kendo-formerror>
+        <kendo-formerror *ngIf="form.controls.Phone.errors?.pattern">Error: phone must be number</kendo-formerror>
+    </kendo-formfield>
+
+   <kendo-formfield>
+      <p>Select a date:</p>
+      <kendo-datepicker [(value)]="value"></kendo-datepicker>
+      <p>
+        (use Alt+↓ to open the calendar, ← and → to navigate, ↑ to increment and
+        ↓ to decrement the value)
+      </p>
+    </kendo-formfield>
+
+    <kendo-formfield orientation="horizontal" showHints="initial">
+      <label class="k-label">Gender</label>
+
+      <ul class="k-radio-list k-list-horizontal">
+          <li class="k-radio-item">
+              <input type="radio" #male value="male" kendoRadioButton formControlName="gender" />
+              <kendo-label class="k-radio-label" [for]="male" text="Male"></kendo-label>
+          </li>
+
+          <li class="k-radio-item">
+              <input type="radio" #female value="female" kendoRadioButton formControlName="gender" />
+              <kendo-label class="k-radio-label" [for]="female" text="Female"></kendo-label>
+          </li>
+
+          <li class="k-radio-item">
+              <input type="radio" #other value="other" kendoRadioButton formControlName="gender" />
+              <kendo-label class="k-radio-label" [for]="other" text="Other"></kendo-label>
+          </li>
+      </ul>
+
+      <kendo-formerror>Error: This field is required</kendo-formerror>
+  </kendo-formfield>
+  <kendo-formfield>
+
+    <kendo-label [for]="familyStatus" text="Select family statues"></kendo-label>
+    <kendo-dropdownlist
+      #familyStatus
+      formControlName="familyStatus"
+      [data]="FamilyStatues"
+      [defaultItem]="{ text: 'Select family status', value: null }"
+      textField="text"
+      valueField="value"
+      [valuePrimitive]="true"
+      required
+    >
+    </kendo-dropdownlist>
+  </kendo-formfield>
+
+        <div class="k-form-buttons">
+            <button class="k-button k-primary" (click)="getCustomersByFields()">search now</button>
+            <button class="k-button" (click)="clearForm()">Clear</button>
+        </div>
+    </form>
+ 
+</div> 
+  <div *ngIf="searchRes">
+      <app-search-customers-grid [searchResult]="searchRes"></app-search-customers-grid>
+    </div>
+
+
+
+
+

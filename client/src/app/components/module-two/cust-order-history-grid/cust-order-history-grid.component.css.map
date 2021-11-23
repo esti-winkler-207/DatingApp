@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,UAAU,CAAA;EACN,eAAe,EAAE,MAAM;EACvB,OAAO,EAAE,IAAI;EACb,WAAW,EAAE,IAAI;CACpB",
+    "sources": [
+        "cust-order-history-grid.component.scss"
+    ],
+    "names": [],
+    "file": "cust-order-history-grid.component.css"
+}

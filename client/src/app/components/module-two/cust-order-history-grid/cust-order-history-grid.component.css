@@ -1,0 +1,10 @@
+.container {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-top: 2rem;
+}
+/*# sourceMappingURL=cust-order-history-grid.component.css.map */

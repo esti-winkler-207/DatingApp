@@ -1,0 +1,13 @@
+.menu {
+  position: absolute;
+  top: 0px;
+  background: #3787fd;
+  width: 100vw;
+  left: 0px;
+  right: 0px;
+}
+
+.k-menu .k-link .k-menu-link {
+  padding: 1rem !important;
+}
+/*# sourceMappingURL=app.component.css.map */

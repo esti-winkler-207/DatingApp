@@ -1,0 +1,40 @@
+
+<!-- (pageChange)="pageChange($event)" [height]="300" [kendoGridBinding]="gridView" [sort]="sortDescriptor" [pageable]="true" format="{0:c}" (sortChange)="handleSortChange($event)"-->
+
+
+<div class="container">
+    <div>
+    <kendo-grid   [data]="searchGrid" [pageSize]="pageSize" [skip]="skip" 
+     [sortable]="true"  
+     style="height: 200px; width: 1000px;">
+    <kendo-grid-column field="customerID" title="customerID" width="150">
+    </kendo-grid-column>
+    <kendo-grid-column field="contactName" title="contactName" width="200">
+    </kendo-grid-column>
+    <kendo-grid-column field="companyName" title="companyName" width="200">
+    </kendo-grid-column>
+    <kendo-grid-column field="contactTitle" title="contactTitle" width="300">
+    </kendo-grid-column>
+    <kendo-grid-column field="address" title="address" width="150">
+    </kendo-grid-column>
+    <kendo-grid-column field="city" title="city" width="150">
+    </kendo-grid-column>
+    <kendo-grid-column field="region" title="region" width="100">
+    </kendo-grid-column>
+    <kendo-grid-column field="postalCode" title="postalCode" width="100">
+    </kendo-grid-column>
+    <kendo-grid-column field="country" title="country" width="200">
+    </kendo-grid-column>
+    <kendo-grid-column field="phone" title="phone" width="200">
+    </kendo-grid-column>
+    <kendo-grid-column field="fax" title="fax" width="200">
+    </kendo-grid-column>
+
+    <!-- <kendo-grid-column field="Discontinued" width="140" filter="boolean">
+      <ng-template kendoGridCellTemplate let-dataItem>
+        <input type="checkbox" [checked]="dataItem.Discontinued" disabled />
+      </ng-template>
+    </kendo-grid-column> -->
+  </kendo-grid>
+  </div>
+  </div>

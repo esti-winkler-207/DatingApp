@@ -1,0 +1,28 @@
+.example {
+  padding-top: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.wrap .arrival-date {
+  width: 90%;
+  margin-right: 18px;
+}
+
+.k-form {
+  width: 400px;
+}
+/*# sourceMappingURL=search-customers.component.css.map */

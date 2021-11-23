@@ -1,0 +1,23 @@
+<!--  -->
+<div class="container">
+    <form class="k-form" [formGroup]="form">
+        <kendo-formfield>
+            <kendo-label [for]="customerid" text="customer ID"></kendo-label>
+            <kendo-textbox formControlName="customerid" [clearButton]="true" [(ngModel)]="customerID" #customerid required></kendo-textbox>
+        </kendo-formfield>
+        <kendo-formfield>
+            <p>Select a date:</p>
+            <kendo-datepicker formControlName="startDate" [(value)]="startDate"></kendo-datepicker>
+        </kendo-formfield>
+        <kendo-formfield>
+            <p>Select a date:</p>
+            <kendo-datepicker formControlName="endDate" [(value)]="endDate"></kendo-datepicker>
+        </kendo-formfield>
+        <div class="k-form-buttons">
+            <button class="k-button k-primary" (click)="getCustOrderHisory()">search now</button>
+        </div>
+    </form>
+</div>
+<div *ngIf="result.length != 0">
+   <app-cust-order-history-grid [result]="result" [isNotSales]="true"></app-cust-order-history-grid>
+</div>

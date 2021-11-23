@@ -1,0 +1,18 @@
+<div *ngIf="!isResEmpty">
+    <div class="container">
+        <div>
+        <kendo-grid [data]="gridView" [pageSize]="pageSize" [skip]="skip" 
+        [pageable]="true"
+        [height]="400"
+        (pageChange)="pageChange($event)"
+         style="height: 400px;width: 400px;">
+        <kendo-grid-column field="productName" title="product name" width="250">
+        </kendo-grid-column >
+        <kendo-grid-column *ngIf="isNotSales" field="total" title="total" width="100">
+        </kendo-grid-column>
+        <kendo-grid-column *ngIf="!isNotSales" field="totalPurchase" title="totalPurchase" width="150">
+        </kendo-grid-column>
+        </kendo-grid>
+        </div>
+    </div>
+</div>
